@@ -1,0 +1,141 @@
+GIT/GITHUB
+==========
+
+Q) What is the difference between GIT and GITHUB ?
+
+GIT						GITHUB
+--------					--------
+It is a distributed version control system 	It is a hosting server for GIT.
+which is used to track the changes in each 
+file of a project.
+
+It is a software.				It is a service.
+
+It is installed locally on a system.		It is hosted on web.
+
+It is command line.				It is a Grahical User Interface.	
+
+It contains local repository.			It contains remote repository.	
+
+
+
+GIT Stages
+===========
+GIT contains three stages.
+
+1) Working Directory 
+
+2) Staging Area
+
+3) Repository 
+
+Diagram: jsp7.1
+
+
+How to push the code to GITHUB
+==============================
+step1:
+-----
+	Create a account in GITHUB.
+	ex:
+		www.github.com 
+
+step2:
+-----
+	Login to GITHUB account.
+	ex:
+		username or email 	:  NiyazulHasan
+		password		:  *******
+			
+
+step3:
+-----
+	Create a remote repository.
+	ex:
+		https://github.com/NiyazulHasan/IH-JAVA-038
+
+
+step4:
+-----
+	Download and Install GIT.
+	ex:
+		https://git-scm.com/downloads
+
+step5:
+-----
+	Create a "myFolder" on Desktop.
+
+step6:
+-----
+	Copy and paste the files inside "myFolder".
+
+step7:
+-----
+	Open the git bash from "myFolder" location.
+
+step8:
+------
+	Initialize the git empty repository.
+	ex:
+		git init 
+
+step9:
+------
+	Check the status.
+	ex:
+		git status 	
+
+step10:
+------
+	Move from master branch to main branch.
+	ex:
+		git branch --move master main 
+
+step11:
+------
+	Add the files to staging area.
+	ex:
+		git add . 
+
+step12:
+------
+	commit the changes.
+	ex:
+		git commit -m "my first file"
+
+	Note:
+		Please tell me who you are
+
+		git config --global user.email ulhasan7867@gmail.com
+
+
+step13:
+-------
+	Add the remote origin to main.
+	ex:
+		git remote add origin  https://github.com/NiyazulHasan/IH-JAVA-038
+
+step14:
+------
+	Push the code.
+	ex:
+		git push -f origin main 
+
+
+step15:
+------
+	Refresh the remote repository.
+	ex:
+		https://github.com/NiyazulHasan/IH-JAVA-038
+
+
+
+
+
+
+
+
+
+
+
+

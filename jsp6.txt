@@ -1,0 +1,163 @@
+Maven 
+=====
+Maven is a project building management tool.
+
+Maven is used to simply the application development process.
+
+Maven contains pom.xml file.
+
+POM stands for Project Object Model.
+
+A pom.xml file contains dependencies, goals, builds and etc.
+
+
+Steps to develop Web application using Maven
+--------------------------------------------
+step1:
+-----
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+------
+	Create a Maven project.
+	ex:
+		File --> new --> maven project --> Next -->
+		
+		Group Id : org.apache.maven.archetype
+		Artifact Id : maven-archetype-webapp 
+		version : 1.0 ---> Next ---> 
+		
+		Group Id: com.ihub.www
+		Artifact Id :  MavenProj
+		package :   com.ihub.www  ---> Finish.
+
+step3:
+-----
+	Add "servlet-api" maven dependency inside pom.xml file.
+	
+pom.xml
+-------
+-
+-
+<dependencies>
+
+	<dependency>
+   		 <groupId>javax.servlet</groupId>
+   		 <artifactId>servlet-api</artifactId>
+    		<version>2.5</version>
+    		<scope>provided</scope>
+	</dependency>
+</dependencies>
+-
+-
+
+step4:
+------
+	Add some logic inside index.jsp file.
+
+index.jsp
+---------
+<center>
+	<h1>
+		<a href="test"> Click Me</a>
+	</h1>
+</center>
+
+step5:
+-----
+	Configure servlet program and welcome file in web.xml file.
+
+web.xml
+---------
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <servlet>
+  	<servlet-name>TestSrv</servlet-name>
+  	<servlet-class>com.ihub.www.TestSrv</servlet-class> 
+  </servlet>  
+  
+  <servlet-mapping>
+  	<servlet-name>TestSrv</servlet-name>  
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping> 
+  
+  <welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+
+
+step6:
+------
+	Create a "java" folder inside "src/main" folder.
+	
+
+step7:
+-----
+	Create a package inside "Java Resources/src/main/java" and TestSrv file. 
+
+TestSrv.java
+-----------
+package com.ihub.www;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestSrv extends HttpServlet
+{
+	protected void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+		
+		pw.println("<center><h1>Servlet is called </h1></center>");
+		
+		pw.close();
+	}
+}
+
+
+step8:
+------
+	run Maven project.
+	ex:
+		right click to project --> run as --> run on server.
+
+
+step9:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:8080/MavenProj
+
+
+
+How to convert Maven project to war file
+=========================================
+step1:
+------
+	Develop a maven web project.
+
+step2:
+-----
+	Convert maven web project to war file.
+	ex:
+		right click to MavenProj --> export --> war file -->
+		select destination(desktop) --> Finish.
+	
+
+
+
+
+
+
+
+
